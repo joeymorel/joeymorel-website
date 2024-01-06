@@ -30,6 +30,7 @@
     padding-right: 20px;
     max-height: 50px;
     fill: rgba(255,241,226,1);
+    z-index:11000;
   }
   
   .Logo_Navbar:hover {
