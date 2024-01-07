@@ -5,12 +5,27 @@
     background-color: rgba(121, 135, 125, 1);
   }
   
-.content {
-  margin-top: 1100px;
-  padding-top: px;
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 
+.wrapper {
+    flex: 1;
+}
 
+.content {
+  display: block;
+  margin-top: 110px;
+}
+
+.hero {
+margin-bottom: 100px;
+}
 
   header {
     position: fixed;
@@ -30,7 +45,6 @@
     padding-right: 20px;
     max-height: 50px;
     fill: rgba(255,241,226,1);
-    z-index:11000;
   }
   
   .Logo_Navbar:hover {
@@ -93,11 +107,11 @@
     border-color: rgba(255, 243, 226, 1);
 }
 
-#Logo_Titre {
+.Logo_Titre {
     position: absolute;
     width: 440px;
     height: 125px;
-    top: 550px;
+    margin-top: -250px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -106,7 +120,7 @@
     background-color: transparent;   
 }
 
-#Logo_Titre span {
+.Logo_Titre span {
     display: inline-block;
     background-color: transparent;
 }
@@ -124,19 +138,18 @@
     background-color: transparent;
 }
 
-#Image1 {
-  position: absolute;
+.Image1 {
+  position: relative;
   height: 600px; 
-  top: 100px;
   left: 65%;
   transform: translateX(-50%);
   z-index: 5;
 }
 
-#Image2 {
-  position: absolute;
+.Image2 {
+  position: relative;
   height: 450px; 
-  top: 550px;
+  margin-top: -250px;
   left: 35%;
   transform: translateX(-50%);
   z-index: 1;
@@ -144,8 +157,8 @@
 
 .image-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .square-box {
@@ -172,7 +185,7 @@
   background-color: transparent;
 }
 
-#CTA_page {
+.CTA_page {
   position: relative;
   left: 50%;
   width: 100%;
@@ -180,15 +193,10 @@
   text-align: center;
   color: rgba(121, 135, 125, 1);
   background-color: rgba(255, 243, 226, 1);
-  margin-top: 300px;
-  margin-bottom: -58px;
-  padding-top: 75px;
-  padding-bottom: 75px;
-  display: flex;
   flex-direction: column;
 }
 
-#CTA_page span {
+.CTA_page span {
   display: inline-block;
   background-color: transparent;
 }
@@ -199,6 +207,7 @@
   font-size: 25px;
   background-color: transparent;
   margin-bottom: 5px;
+  padding-top: 50px;
 }
 
 #Jettez {
@@ -223,6 +232,7 @@
   justify-content: center;
   background-color: rgba(255, 243, 226, 1);
   margin-top: 15px;
+  padding-bottom: 50px;
 }
 
 .ctaButton {
@@ -249,99 +259,114 @@
 
 .footer {
   position: relative;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
   text-align: left;
   background-color: #4B4E4C;
-  padding-top: 75px;
-  padding-bottom: 75px;
-  margin-bottom: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: center
+  justify-content: center;
 }
 
+
 .footer .column {
-  background-color: transparent;
-  flex: 1;
-  max-width: 300px;
-  margin: 0px 50px;
+background-color: transparent;
+flex: 1;
+max-width: 300px;
+margin: 0px 50px;
 }
 
 .Logo_Footer {
-  cursor: pointer;
-  margin-right: auto;
-  padding-right: 20px;
-  max-height: 50px;
-  fill: rgba(255, 241, 226, 1);
-  background-color: transparent;
-  transition: fill 0.3s ease 0s;
+cursor: pointer;
+margin-right: auto;
+padding-right: 20px;
+max-height: 50px;
+fill: rgba(255, 241, 226, 1);
+background-color: transparent;
+transition: fill 0.3s ease 0s;
 }
 
 .Logo_Footer:hover {
-  fill: rgba(121, 135, 125, 1);
+fill: rgba(121, 135, 125, 1);
 }
 
 .footer h3, .footer ul, .footer li, .footer a {
-  background-color: transparent;
-  margin: 0; 
-  padding: 0; 
-  color: rgba(255, 241, 226, 1);
-  text-decoration: none;
-  margin-top: 5px;
+background-color: transparent;
+color: rgba(255, 241, 226, 1);
+text-decoration: none;
+margin-top: 5px;
 }
 
 .footer ul {
-  list-style-type: none;
+list-style-type: none;
 }
 
 .footer h3 {
-  margin-bottom: 10px;
-  font-size: 24px;
+margin-bottom: 10px;
+font-size: 24px;
 }
 
 .footer a {
-  color: rgba(255, 241, 226, 1);
-  text-decoration: none;
-  font-family: 'Author', sans-serif;
-  font-weight: 400;
-  margin-top: 5px;
-  font-size: 18px;
+color: rgba(255, 241, 226, 1);
+text-decoration: none;
+font-family: 'Author', sans-serif;
+font-weight: 400;
+margin-top: 5px;
+font-size: 18px;
 }
 
 
 
 
 @media only screen and (max-width: 1600px) {
-  #Logo_Titre {
-    top: 450px;
-    }
+  .Logo_Titre {
+    margin-top: -225px;    }
 
-  #Image1 {
-    height: 450px; 
-    top: 100px;
+  .Image1 {
+    height: 525px; 
     left: 65%;
   }
   
-  #Image2 {
-    height: 350px; 
-    top: 450px;
+  .Image2 {
+    height: 400px; 
     left: 35%;
+    margin-top: -225px;
   }
-  
-  .content {
-    margin-top: 900px;
-  }
+
 }
 
 
 
 
-@media only screen and (max-width: 1240px) {
-  #Logo_Titre {
-    top: 400px;
-    }
+@media only screen and (max-width: 1400px) {
+
+  #Joey_Morel {
+    font-size: 70px;
+}
+
+#Graphiste__Photographe {
+    font-size: 28px;
+}
+
+.Logo_Titre {
+  margin-top: -175px;    }
+
+.Image1 {
+  height: 475px; 
+  left: 65%;
+}
+
+.Image2 {
+  height: 350px; 
+  left: 35%;
+  margin-top: -185px;
+}
+  
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .Logo_Titre {
+    margin-top: -175px;
+  }
 
   #Joey_Morel {
     font-size: 60px;
@@ -351,92 +376,189 @@
     font-size: 22px;
 }
 
-  #Image1 {
-    height: 350px; 
-    top: 100px;
-    left: 65%;
-  }
-  
-  #Image2 {
-    height: 250px; 
-    top: 400px;
-    left: 35%;
-  }
-  
-  .content {
-    margin-top: 700px;
-  }
+.Image1 {
+  height: 450px; 
+  left: 65%;
+}
 
-  .image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .square-box {
-    width: 400px;
-    height: 400px;
-    margin: 0 5px;
-  }
-  
+.Image2 {
+  height: 325px; 
+  left: 35%;
+  margin-top: -190px;
+}
+
+.square-box {
+  width: 500px;
+  height: 500px;
 }
 
 
-@media only screen and (max-width: 960px) {
-  #Logo_Titre {
-    top: 300px;
-    }
+}
+
+
+
+
+
+@media only screen and (max-width: 1175px) {
+  .Logo_Titre {
+    margin-top: -135px;
+  }
 
   #Joey_Morel {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 #Graphiste__Photographe {
-    font-size: 18px;
+    font-size: 22px;
 }
 
-  #Image1 {
-    height: 225px; 
-    top: 100px;
-    left: 70%;
-  }
+.Image1 {
+  height: 400px; 
+  left: 65%;
+}
+
+.Image2 {
+  height: 275px; 
+  left: 35%;
+  margin-top: -150px;
+}
+
+.square-box {
+  width: 450px;
+  height: 450px;
+}
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+.Image1 {
+  left: 68%;
+}
+
+.Image2 {
+  left: 33%;
+  margin-top: -150px;
+}
+
+.square-box {
+  width: 400px;
+  height: 400px;
+}
+
+}
+
+
+@media only screen and (max-width: 850px) {
+
+  .Image1 {
+  height: 350px;  
+  left: 72%;
+}
   
-  #Image2 {
-    height: 175px; 
-    top: 300px;
+  .Image2 {
+    height: 250px;
+    margin-top: -150px;
     left: 35%;
   }
+
+  .Logo_Titre {
+    margin-top: -130px;
+  }
+
+  #Joey_Morel {
+    font-size: 55px;
+  }
+
+  #Graphiste__Photographe {
+    font-size: 20px;
+  }
+
+  .square-box {
+    width: 325px;
+    height: 325px;
+  }
   
-  .content {
-    margin-top: 500px;
+
+}
+
+@media only screen and (max-width: 725px) {
+
+  .Image1 {
+  height: 300px;  
+  left: 72%;
+}
+  
+  .Image2 {
+    height: 225px;
+    margin-top: -100px;
+    left: 35%;
+  }
+
+  .Logo_Titre {
+    margin-top: -75px;
+  }
+
+  .square-box {
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  .square-box {
+    width: 500px;
+    height: 500px;
+    margin: 10px 0px;
   }
 
   .image-container {
-    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
   
+}
+
+@media only screen and (max-width: 600px) {
+
+  .Image1 {
+  height: 250px;  
+  left: 72%;
+}
+  
+  .Image2 {
+    height: 175px;
+    margin-top: -25px;
+    left: 35%;
+  }
+
+  .Logo_Titre {
+    margin-top: -20px;
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+
   .square-box {
     width: 400px;
     height: 400px;
-    margin: 5px 0;
   }
-    .column:nth-child(2) {
-      display: none;
-    }
 
-
-    .footer h3 {
-      font-size: 20px;
-    }
-    
-    .footer a {
-      font-size: 14px;
-    }
 }
 
+@media only screen and (max-width: 450px) {
+
+  .square-box {
+    width: 300px;
+    height: 300px;
+  }
+
+}
 
 
 
