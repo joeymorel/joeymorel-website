@@ -4,14 +4,21 @@
     padding: 0;
     background-color: rgba(121, 135, 125, 1);
   }
-  
+
 body, html {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
+
+body {
+  position: relative
 }
 
 .wrapper {
@@ -30,13 +37,13 @@ margin-bottom: 100px;
   header {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 30px 10%;
     background-color:rgba(121, 135, 125, 1);
-    z-index: 10000;
+    z-index: 500;
     }
   
   .Logo_Navbar {
@@ -45,6 +52,7 @@ margin-bottom: 100px;
     padding-right: 20px;
     max-height: 50px;
     fill: rgba(255,241,226,1);
+    transition: fill 0.3s ease-in-out;
   }
   
   .Logo_Navbar:hover {
@@ -59,6 +67,7 @@ margin-bottom: 100px;
     color: rgba(255, 243, 226, 1);
     text-decoration: none;
     font-size: 20px;
+    transition: color 0.3s ease-in-out;
   }
 
   .a,
@@ -89,16 +98,16 @@ margin-bottom: 100px;
     color: #4B4E4C;
   }
   
-  .cta {
-    margin-left: 20px;
-    padding: 9px 20px;
-    background-color: rgba(255, 243, 226, 1);
-    text-align: center;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
-    box-sizing: border-box;
+.cta {
+  margin-left: 20px;
+  padding: 9px 20px;
+  background-color: rgba(255, 243, 226, 1);
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+  box-sizing: border-box;
 }
 
 .cta:hover {
@@ -109,29 +118,30 @@ margin-bottom: 100px;
 
 .Logo_Titre {
     position: absolute;
-    width: 440px;
-    height: 125px;
+    width: 100%;
     margin-top: -250px;
+    margin-left: 5px;
+    margin-right: 5px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgba(255, 243, 226, 1);
     z-index: 10;
-    background-color: transparent;   
+    background-color: transparent;
+    overflow-x: hidden;
 }
 
 .Logo_Titre span {
-    display: inline-block;
-    background-color: transparent;
+  background-color: transparent;
 }
 
-#Joey_Morel {
+.Joey_Morel {
     font-family: 'Lora', serif;
     font-size: 80px;
     background-color: transparent;
 }
 
-#Graphiste__Photographe {
+.Graphiste__Photographe {
     font-family: 'Author', serif;
     font-weight: 500;
     font-size: 30px;
@@ -158,7 +168,8 @@ margin-bottom: 100px;
 .image-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
 
 .square-box {
@@ -166,6 +177,15 @@ margin-bottom: 100px;
   width: 600px;
   height: 600px;
   margin: 0 10px;
+  cursor: pointer;
+}
+
+.square-box img:hover {
+  transition: filter 0.3s ease-in-out;
+}
+
+.square-box img:hover {
+  filter: brightness(70%);
 }
 
 .square-box img {
@@ -181,21 +201,17 @@ margin-bottom: 100px;
   transform: translate(-50%, -50%);
   font-size: 35px;
   color: rgba(255, 243, 226, 1);
-  margin: 0;
+  margin-bottom: 100px;
   background-color: transparent;
 }
 
 .CTA_page {
-  position: relative;
-  left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: rgba(121, 135, 125, 1);
   background-color: rgba(255, 243, 226, 1);
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
+  color: rgba(121, 135, 125, 1);
+  text-align: center;
+  padding: 50px 25px;
+  box-sizing: border-box;
 }
 
 .CTA_page span {
@@ -208,7 +224,6 @@ margin-bottom: 100px;
   font-size: 25px;
   background-color: transparent;
   margin-bottom: 5px;
-  padding-top: 50px;
 }
 
 .Jettez {
@@ -223,21 +238,20 @@ margin-bottom: 100px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 40px;
-  margin-top: 16px;
+  width: 100px;
+  height: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
   background-color: rgba(255, 243, 226, 1);
-  margin-top: 15px;
-  padding-bottom: 50px;
+  margin-top: 0px;
 }
 
 .ctaButton {
-  margin-left: 20px;
   padding: 9px 20px;
   background-color: rgba(121, 135, 125, 1);
   text-align: center;
@@ -250,6 +264,14 @@ margin-bottom: 100px;
   font-family: 'Author', sans-serif;
   font-weight: 600;
   font-size: 18px;
+}
+
+.ctaButton:nth-child(1) {
+  margin-right: 10px;
+}
+
+.ctaButton:nth-child(2) {
+  margin-left: 10px;
 }
 
 .ctaButton:hover {
@@ -277,6 +299,7 @@ margin: 0px 50px;
 
 .Logo_Footer {
 cursor: pointer;
+width: 100%;
 margin-right: auto;
 padding-right: 20px;
 max-height: 50px;
@@ -298,21 +321,53 @@ margin-top: 5px;
 
 .footer ul {
 list-style-type: none;
+cursor: pointer;
 }
 
 .footer h3 {
 margin-bottom: 10px;
 font-size: 24px;
+transition: color 0.3s ease 0s;
+cursor: pointer;
 }
+
+.footer h3:hover {
+  color: rgba(121, 135, 125, 1);
+  }
 
 .footer a {
 color: rgba(255, 241, 226, 1);
 text-decoration: none;
 font-family: 'Author', sans-serif;
-font-weight: 400;
+font-weight: 500;
 margin-top: 5px;
 font-size: 18px;
+transition: color 0.3s ease 0s;
 }
+
+.footer a:hover {
+  color: rgba(121, 135, 125, 1);
+}
+
+.credits {
+  position: absolute;
+  background-color: transparent;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Author', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 241, 226, 1);
+  opacity: 60%;
+}
+
+.credits span {
+  background-color: transparent;
+}
+
+
+
+
 
 
 
@@ -332,6 +387,10 @@ font-size: 18px;
     margin-top: -225px;
   }
 
+  .hero {
+    margin-bottom: 50px;
+  }
+
 }
 
 
@@ -339,11 +398,11 @@ font-size: 18px;
 
 @media only screen and (max-width: 1400px) {
 
-  #Joey_Morel {
+  .Joey_Morel {
     font-size: 70px;
 }
 
-#Graphiste__Photographe {
+.Graphiste__Photographe {
     font-size: 28px;
 }
 
@@ -369,11 +428,11 @@ font-size: 18px;
     margin-top: -175px;
   }
 
-  #Joey_Morel {
+  .Joey_Morel {
     font-size: 60px;
 }
 
-#Graphiste__Photographe {
+.Graphiste__Photographe {
     font-size: 22px;
 }
 
@@ -405,11 +464,11 @@ font-size: 18px;
     margin-top: -135px;
   }
 
-  #Joey_Morel {
+  .Joey_Morel {
     font-size: 60px;
 }
 
-#Graphiste__Photographe {
+.Graphiste__Photographe {
     font-size: 22px;
 }
 
@@ -468,11 +527,11 @@ font-size: 18px;
     margin-top: -130px;
   }
 
-  #Joey_Morel {
+  .Joey_Morel {
     font-size: 55px;
   }
 
-  #Graphiste__Photographe {
+  .Graphiste__Photographe {
     font-size: 20px;
   }
 
@@ -480,9 +539,27 @@ font-size: 18px;
     width: 325px;
     height: 325px;
   }
-  
+ 
+.footer .column:nth-child(2) {
+  display: none;
+}
+
+.footer .column:nth-child(1) {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.footer .column:nth-child(3) {
+  margin-right: 0px;
+  margin-left: 0px;
+  }  
+
+  .content {
+    margin-top: 90px;
+  }
 
 }
+
 
 @media only screen and (max-width: 725px) {
 
@@ -538,7 +615,7 @@ font-size: 18px;
   }
 
   .Logo_Titre {
-    margin-top: -20px;
+    margin-top: -30px;
   }
 
 }
@@ -557,11 +634,131 @@ font-size: 18px;
   .square-box {
     width: 300px;
     height: 300px;
+    margin: 0;
   }
+
+  .box-title {
+    font-size: 28px;
+  }
+
+  .Joey_Morel {
+    font-size: 40px;
+  }
+
+  .Graphiste__Photographe {
+    font-size: 16px;
+  }
+
+  .hero {
+    justify-content: end;
+  }
+
+  .Image1 {
+    align-self: self-end;
+}
+
+  
+  .Image2 {
+    left: 131px;
+  }
+
+
+  
+}
+
+
+
+@media only screen and (max-width: 400px) {
+
+.footer {
+  flex-direction: column;
+}
+
+.footer .column:nth-child(1) {
+  margin-bottom: 30px;
+}
+  
+.Logo_Footer {
+  padding: 0px;
+}
+
+.image-container{
+  margin-bottom: 30px;
+}
+
+.ctaButton:nth-child(1) {
+  margin-right: 5px;
+}
+
+.ctaButton:nth-child(2) {
+  margin-left: 5px;
+}  
+
+.hero {
+  margin-bottom: 30px;
+}
 
 }
 
 
+
+@media only screen and (max-width: 325px) {
+
+  .square-box {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+  }
+
+  .box-title {
+    font-size: 28px;
+  }
+  
+  .button-container {
+   flex-direction: column;
+   align-items: center;
+  }
+
+  .ctaButton {
+    width: fit-content;
+   }
+
+  .image-container{
+    margin-bottom: 10px;
+    }
+  
+  .savoirplus {
+    font-size: 18px;
+  }
+
+  .Jettez {
+    font-size: 28px;
+  }
+
+  .ctaButton:nth-child(1) {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+    
+  .ctaButton:nth-child(2) {
+    margin-left: 0px;
+  }  
+
+  .square {
+    margin-top: 18px;
+    margin-bottom: 24px;
+  }  
+
+}
+
+
+@media only screen and (max-width: 300px) {
+
+  .image-container{
+  margin-bottom: 0px;
+  }
+
+}
 
 
 
@@ -574,32 +771,29 @@ font-size: 18px;
     display: none;
     fill: rgba(255, 243, 226, 1);
     height: 30px;
-  }
+    transition: fill 0.3s ease-in-out;
 
-
-  .menu {
-    display: none;
-    fill: rgba(255, 243, 226, 1);
-  }
-  
-  .menu:hover {
-    background-color: #f26658;
   }
 
   .overlay {
-    height: 100%;
-    width: 0;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    z-index: 1;
-    left: 0;
+    z-index: 999;
+    right: 0;
     top: 0;
-    background-color: #24252a;
+    background-color: #4B4E4C;
     overflow-x: hidden;
     transition: width 0.5s ease 0s;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .overlay--active {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
   }
   
   .overlay__content {
@@ -608,37 +802,68 @@ font-size: 18px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
   }
   
   .overlay a {
     padding: 15px;
-    font-size: 36px;
+    margin-bottom: 15px;
+    font-size: 25px;
     display: block;
+    color: rgba(255, 243, 226, 1);
     transition: color 0.3s ease 0s;
+    background-color: transparent;
   }
   
   .overlay a:hover,
   .overlay a:focus {
-    color: #f26658;
+    color: rgba(121, 135, 125, 1);
   }
+
   .overlay .close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-    color: #edf0f1;
+    position: fixed;
+    margin-top: 23px;
+    margin-right: 9%;
+    padding: 5px;
+    fill: rgba(255, 243, 226, 1);
+    background-color: transparent;
+    top: 0px;
+    margin-bottom: 0px;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: fill 0.3s ease 0s;
+  }
+
+  .overlay .close svg {
+    background-color: transparent;
+  }
+
+  .overlay .close:hover {
+    fill: rgba(121, 135, 125, 1);
+  }
+
+  
+  .cta-overlay:nth-child(4) {
+    margin-top: 12px;
+    padding: 12px 30px;
+    color: #4B4E4C;
+    background-color: rgba(255, 243, 226, 1);
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    box-sizing: border-box;
   }
   
-  @media screen and (max-height: 450px) {
-    .overlay a {
-      font-size: 25px;
-    }
-    .overlay .close {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-  }
+
+  .cta-overlay:nth-child(4):hover {
+    color: rgba(255, 243, 226, 1);
+    background-color: #4B4E4C;
+    border-color: rgba(255, 243, 226, 1);
+}
+
+
   
   @media only screen and (max-width: 800px) {
     .nav__links,
@@ -648,96 +873,22 @@ font-size: 18px;
     .hamburger-menu {
       display: initial;
     }
-  }
-  
 
+    header {
+      padding: 20px 10%;
+      }  
 
-  .banner {
-    padding: 100px 10%;
-  }
-
-  h1 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 10% 20px 10%;
-
-    line-height: 45px;
-    font-size: 50px;
-    font-family: 'Author', sans-serif;
-    font-weight: 500;
-    color: #24252a;
-    text-decoration: none;
-  }
-
-  h1::selection {
-    color: #fff9ec;
-    background-color: #6fc6a4;
-  }
-
-  h4 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 250px 10% 0px 10%;
-
-    line-height: 20px;
-    font-size: 20px;
-    font-family: 'Author', sans-serif;
-    font-weight: 500;
-    color: #24252a;
-    text-decoration: none;
-  }
-
-  h4::selection {
-    color: #fff9ec;
-    background-color: #6fc6a4;
   }
 
 
-  li {
-    display: block;
-  }
-
-  .number {
-    text-align: right;
-    list-style: none;
-    margin: 8px 0px;
-    font-size: 18px;
-    font-family: 'Author', sans-serif;
-    font-weight: 500;
-    color: #fff9ec;
-    background-color: #24252a;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .number:hover {
-    color: #f26658;
-    }
-
-  .w-list-unstyled {
-    background-color: #24252a;
-  }
-
-  .btn {
+  .hamburger-menu {
     margin-left: 10%;
-    padding: 9px 20px;
-    font-family: 'Author', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: #fff9ec;
-    text-decoration: none;
-    background-color: #f26658;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease 0s;
+    transition: fill 0.3s ease 0s;
   }
 
-  .btn:hover {
-    background-color: #24252a;
+  .hamburger-menu:hover {
+    fill: #4B4E4C;
   }
 
   footer {
@@ -746,13 +897,4 @@ font-size: 18px;
     align-items: center;
     padding: 60px 10%;
     background-color: #24252a;
-  }
-
-  .fullwidthimg {
-    margin-top: 200px;
-    margin-bottom: 0px;
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    object-position: center;
   }
